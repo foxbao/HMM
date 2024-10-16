@@ -19,8 +19,8 @@ target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/
 
 target_link_libraries(
   ${MODULE_NAME}
-  PUBLIC
-  PRIVATE common civmap mapcore OpenDrive utils)
+  PUBLIC ${OpenCV_LIBS} 
+  PRIVATE common civmap )
 
 set(target_name ${MODULE_NAME}_test)
 add_executable(${target_name} modules_test.cpp)

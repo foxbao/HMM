@@ -1,6 +1,7 @@
 #pragma once
 #include <Eigen/Dense>
 #include <vector>
+// #include "common/inner_types.hpp"
 #include "common/inner_types.hpp"
 #include "civmap/map.h"
 #include "modules/inner_types.hpp"

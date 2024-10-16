@@ -22,10 +22,15 @@ set( MODULE_NAME ${PROJECT_NAME})
 
 add_library(${MODULE_NAME} SHARED)
 
+
+message(STATUS "The value of CMAKE_CURRENT_LIST_DIR is: ${CMAKE_CURRENT_LIST_DIR}")
+message(STATUS "The value of PROJECT_SOURCE_DIR is: ${PROJECT_SOURCE_DIR}")
+message(STATUS "The value of CMAKE_SOURCE_DIR is: ${CMAKE_SOURCE_DIR}")
 target_include_directories(${MODULE_NAME}
 PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
     ${PROJECT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}
 )
 target_sources(${MODULE_NAME}
 PRIVATE

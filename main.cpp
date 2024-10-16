@@ -1,8 +1,7 @@
 
-#include "my_functions.h"
-
+#include "common/inner_types.hpp"
+#include "modules/HMM/hmm_loc.h"
 int main() {
-    my_functions();
     // TODO: Implement your code here
     return 0;
 }

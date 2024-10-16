@@ -190,7 +190,8 @@ namespace civ
             {
 
                 int T = observations->points_.size();
-                
+                std::vector<sp_cState> states;
+                return states;
             }
             
             // the comparator used in set to remove repetition of curves found

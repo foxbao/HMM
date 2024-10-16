@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <eigen3/Eigen/Core>
-#include "common/type_define.hpp"
+#include "type_define.hpp"
 namespace civ
 {
     namespace V2I

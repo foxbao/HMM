@@ -33,39 +33,28 @@ include_directories(${CERES_INCLUDE_DIRS})
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 
-# set the default modules to be compiled
-set(compile_dirs common)
-# compile only the necessary modules
-# list(APPEND compile_dirs modules)
+# # set the default modules to be compiled
+# set(compile_dirs common)
+# # compile only the necessary modules
+# # list(APPEND compile_dirs civmap modules)
 
 
-foreach(subdir ${compile_dirs})
-  if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/${subdir}")
-    add_subdirectory(${subdir})
-  endif()
-endforeach()
-
-# add_library(MyLibrary SHARED)
-# # 使用 target_sources 添加库的源文件
-# target_sources(MyLibrary
-#     PRIVATE
-#         file1.cpp
-# )
-
-# # 包含头文件的路径
-# target_include_directories(MyLibrary
-#     PUBLIC
-#         ${CMAKE_SOURCE_DIR}/include
-# )
+# foreach(subdir ${compile_dirs})
+#   if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/${subdir}")
+#     add_subdirectory(${subdir})
+#   endif()
+# endforeach()
 
 
-
+add_subdirectory(common)
+add_subdirectory(modules)
+add_subdirectory(civmap)
 
 # 添加源文件
-set(SOURCES main.cpp my_functions.cpp)
+set(SOURCES main.cpp)
 
 # 指定生成的可执行文件
-add_executable(HMM ${SOURCES})
+add_executable(HMM main.cpp)
 
 # 如果需要链接其他库，例如，pthread，OpenCV等，可以在这里加
-# target_link_libraries(MyProject <library_name>)
+target_link_libraries(HMM PRIVATE common)
