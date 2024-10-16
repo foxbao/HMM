@@ -32,6 +32,7 @@ namespace civ
             double closestDistanceBetweenLines(Eigen::Vector3d a0,Eigen::Vector3d a1,Eigen::Vector3d b0,Eigen::Vector3d b1);
 
 
+
         }
     }
 }
